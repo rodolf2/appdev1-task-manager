@@ -21,25 +21,37 @@ const SignUp = () => {
   };
   return (
     <>
-      <div>
-        <h1>Sign Up</h1>
-        <input
-          required
-          type="email"
-          placeholder="Enter Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          required
-          type="password"
-          placeholder="Enter Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={handleSignUp}>Sign Up</button>
-        {error && <p>{error}</p>}
-        <p>
-          Already Have an Account? <Link to={"/signin"}>Sign In</Link>
-        </p>
+      <div className="flex items-center justify-center min-h-screen bg-gray-100 rounded-md">
+        <div className="bg-white p-6 rounded shadow-md w-96">
+          <h1 className="text-xl text-center font-bold mb-4">Sign Up</h1>
+          <input
+            required
+            type="email"
+            placeholder="Enter Email"
+            className="border border-gray-300 p-2 mb-4 w-full"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            required
+            type="password"
+            placeholder="Enter Password"
+            className="border border-gray-300 p-2 mb-4 w-full"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button
+            onClick={handleSignUp}
+            className="bg-blue-500 text-white p-2 rounded w-full mb-2 hover:bg-blue-900"
+          >
+            Sign Up
+          </button>
+          {error && <p className="text-red-500 text-center mt-2">{error}</p>}
+          <p className="text-center mt-4">
+            Already Have an Account?{" "}
+            <Link to={"/signin"} className="text-blue-500  hover:text-blue-900">
+              Sign In
+            </Link>
+          </p>
+        </div>
       </div>
     </>
   );
